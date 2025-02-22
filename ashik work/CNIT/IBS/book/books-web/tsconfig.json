@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "fyo/*": ["./fyo/*"],
+      "utils/*": ["./utils/*"],
+      "models/*": ["./models/*"],
+      "schemas/*": ["./schemas/*"],
+      "reports/*": ["./reports/*"],
+      "dummy/*": ["./dummy/*"],
+      "src/*": ["./src/*"],
+      "regional/*": ["./regional/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "fyo/**/*.ts",
+    "utils/**/*.ts",
+    "models/**/*.ts",
+    "schemas/**/*.ts",
+    "reports/**/*.ts",
+    "dummy/**/*.ts",
+    "regional/**/*.ts",
+    "vite.config.ts"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
