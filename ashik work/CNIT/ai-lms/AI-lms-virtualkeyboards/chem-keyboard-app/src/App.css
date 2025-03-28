@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* Basic App Layout */
+.App {
+  padding: 20px;
+  max-width: 900px;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.App-header {
   text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+.App-header h1 { margin: 0; }
+
+.answer-area { margin: 0 auto; }
+.answer-area label { display: block; margin-bottom: 8px; font-weight: bold; color: #555; }
+
+/* Wrapper for textarea + button */
+.input-wrapper { position: relative; margin-bottom: 25px; }
+
+.answer-area textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  min-height: 150px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.answer-area textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Button to open the Chemistry Keyboard */
+.open-chem-keyboard-btn { /* Renamed class */
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 5px 10px;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  color: #495057;
+  border-radius: 4px;
+  line-height: 1;
+  transition: background-color 0.2s ease;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.open-chem-keyboard-btn:hover { background-color: #dee2e6; }
+
+/* Rendered Display Area */
+.rendered-answer-display { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; }
+.rendered-answer-display label { margin-bottom: 10px; font-size: 0.9em; color: #6c757d; }
+.rendered-content {
+  border: 1px solid #e9ecef;
+  padding: 15px;
+  background-color: #f8f9fa;
+  min-height: 100px;
+  line-height: 1.7;
+  border-radius: 4px;
+  overflow-wrap: break-word;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* KaTeX Specific adjustments */
+.rendered-content .katex-display { margin: 1em 0; overflow-x: auto; padding: 5px 0; text-align: left; }
+.rendered-content .katex { font-size: 1.1em; text-rendering: auto; }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+/* Style for KaTeX error messages */
+.rendered-content span[style*="color: red"] { background-color: #f8d7da; color: #721c24; padding: 3px 6px; border: 1px solid #f5c6cb; border-radius: 3px; font-family: monospace; font-size: 0.9em; }

@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# ... (same content as before)
+/node_modules
+/build
+# ... etc
